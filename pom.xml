@@ -1,12 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.petrikainulainen.spring.springmvctest</groupId>
-    <artifactId>rest-unittest</artifactId>
     <packaging>war</packaging>
     <version>0.1</version>
-    <name>Spring MVC Test - Writing Unit Tests for a REST API.</name>
-    <description>An example application that demonstrates the unit testing of a REST API.</description>
+    <name>NZVOD - Nan Zhuang primary school Video On Demand System</name>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -434,4 +431,7 @@
             </exclusions>
         </dependency>
     </dependencies>
+    <artifactId>SexyLion</artifactId>
+    <groupId>com.lyn</groupId>
+    <description>南庄小学微课点播系统</description>
 </project>
