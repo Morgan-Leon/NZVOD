@@ -9,7 +9,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
  */
 @Configuration
 @ComponentScan(basePackages = {
-		"com.syzton.sunread.todo.service",
+		"com.lyn.nzvod.todo.service",
 		"com.lyn.nzvod.model",
 		"com.lyn.nzvod.service"
 		})

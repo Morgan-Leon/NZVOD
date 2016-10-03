@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {
-		"com.syzton.sunread.todo.repository",
+		"com.lyn.nzvod.todo.repository",
 		"com.lyn.nzvod.repository",
 })
 public class PersistenceContext {
@@ -44,7 +44,7 @@ public class PersistenceContext {
     private static final String PROPERTY_NAME_HIBERNATE_NAMING_STRATEGY = "hibernate.ejb.naming_strategy";
     private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
 
-    private static final String[] PROPERTY_PACKAGES_TO_SCAN = {"com.syzton.sunread.todo.model","com.lyn.nzvod.model"};
+    private static final String[] PROPERTY_PACKAGES_TO_SCAN = {"com.lyn.nzvod.todo.model","com.lyn.nzvod.model"};
 
     @Resource
     private Environment environment;

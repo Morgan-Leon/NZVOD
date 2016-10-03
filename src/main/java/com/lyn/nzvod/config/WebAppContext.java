@@ -20,8 +20,8 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {
-        "com.syzton.sunread.common.controller",
-        "com.syzton.sunread.todo.controller",
+        "com.lyn.nzvod.common.controller",
+        "com.lyn.nzvod.todo.controller",
         "com.lyn.nzvod.controller"
 })
 public class WebAppContext extends WebMvcConfigurerAdapter {

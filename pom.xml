@@ -78,8 +78,8 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>1.7</version>
-                <executions>
-                    <execution>
+                <!-- <executions>
+                   <execution>
                         <id>add-integration-test-sources</id>
                         <phase>generate-test-sources</phase>
                         <goals>
@@ -105,7 +105,7 @@
                             </resources>
                         </configuration>
                     </execution>
-                </executions>
+                </executions> -->
             </plugin>
             <!-- Used for unit tests -->
             <plugin>
@@ -431,7 +431,7 @@
             </exclusions>
         </dependency>
     </dependencies>
-    <artifactId>SexyLion</artifactId>
     <groupId>com.lyn</groupId>
     <description>南庄小学微课点播系统</description>
+    <artifactId>nzvod</artifactId>
 </project>
