@@ -1,0 +1,76 @@
+
+
+<table border="1" class="movingTable" >
+  <tr text-align = 'center'>
+    <td>
+      <b>起始地区</b>
+    </td>
+    <td>
+      <b>所用车型</b>
+    </td>
+    <td>
+      <b>搬家日期</b>
+    </td>
+    <td>
+      <b>联系人</b>
+    </td>
+    <td>
+      <b>联系电话</b>
+    </td>
+    <td>
+      <b>状态</b>
+    </td>
+    <td>
+      <b>操作</b>
+    </td>
+  </tr>
+  <tr ng-repeat = "item in movingInfo.content">
+    <td>
+      {{item.region | formatRegion}}
+    </td>
+    <td>
+      {{item.carType | formatCarType}}
+    </td>
+    <td>
+      {{item.time}}
+    </td>
+    <td>
+      {{item.contact}}
+    </td>
+    <td>
+      {{item.areaCode}}{{item.telephone}}
+    </td>
+    <td>
+      {{item.status}}
+    </td>
+    <td>
+      <a href="{{getHref(item)}}"><button type="button" id="btn{{item.id}}"  name="optBtn" ng-disabled = "isAble(item)" style="color: black;">处理</button></a>
+      <a href="#/detail/{{item.id}}"><button type="button" name="button" style="color: black;">详情</button></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="7">
+      <!-- Custom page number goes here -->
+          <a ng-click="searchPageable.showPage(searchPageable.page - 1)">上一页</a>
+          <span ng-repeat="pageNumber in searchPageable.pageNumbers.content">
+              <a class="custom-page-number"
+                  ng-class="{'custom-page-number-current': pageNumber === searchPageable.page}"
+                  ng-click="searchPageable.showPage(pageNumber)">
+                  {{pageNumber}}
+              </a>
+          </span>
+          <a ng-click="searchPageable.showPage(searchPageable.page + 1)">下一页</a>
+    </td>
+  </tr>
+</table>
+
+<br>
+<br>
+
+<div class="col-md-4">
+</div>
+<div class="col-md-3">
+   <div class="row">
+     <button type="button" name="button" ui-sref = "add">预约登记</a></button>
+   </div>
+</div>
