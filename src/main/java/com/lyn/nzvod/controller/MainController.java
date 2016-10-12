@@ -50,9 +50,9 @@ public class MainController {
     
     @RequestMapping(value = "/grade", method = RequestMethod.POST)
     @ResponseBody
-    public Grade addGrade(@Valid @RequestBody Grade grade) {
-    	LOGGER.debug("Adding a new to-do entry with information: {}", grade);
-        Grade added = gradeService.add(grade);
+    public Grade addGrade(@Valid @RequestBody String gradeName) {
+    	LOGGER.debug("Adding a new to-do entry with information: {}", gradeName);
+        Grade added = gradeService.add(gradeName);
         LOGGER.debug("Added a to-do entry with information: {}", added);
         return added;
     }
@@ -61,7 +61,6 @@ public class MainController {
     @ResponseBody
     public List<Grade> findAll() {
         LOGGER.debug("Finding all todo entries.");
-
         List<Grade> models = gradeService.findAll();
         LOGGER.debug("Found {} to-do entries.", models.size());
 

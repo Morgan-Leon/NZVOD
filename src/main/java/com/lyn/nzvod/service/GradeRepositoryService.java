@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lyn.nzvod.model.Grade;
 import com.lyn.nzvod.repository.GradeRepository;
@@ -39,9 +40,11 @@ public class GradeRepositoryService implements GradeService {
 	 * @see com.lyn.nzvod.service.GradeService#add(com.lyn.nzvod.model.Grade)
 	 */
 	@Override
-	public Grade add(Grade Grade) {
+	public Grade add(String name) {
 		// TODO Auto-generated method stub
-		return null;
+		Grade grade = new Grade(name);
+		
+		return gradeRepo.saveAndFlush(grade);
 	}
 
 	/* (non-Javadoc)
@@ -75,10 +78,12 @@ public class GradeRepositoryService implements GradeService {
 	/* (non-Javadoc)
 	 * @see com.lyn.nzvod.service.GradeService#findAll()
 	 */
-	@Override
+    @Transactional(readOnly = true)
+    @Override
 	public List<Grade> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return gradeRepo.findAll();
 	}
 	
 

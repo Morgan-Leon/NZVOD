@@ -14,4 +14,28 @@ public class Grade extends AbstractEntity{
 	
     @Column(name = "name", nullable = false, length = MAX_LENGTH_NAME)
     private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
+	 * 
+	 */
+	public Grade() {
+		// TODO Auto-generated constructor stub
+	}
+	/**
+	 * 
+	 */
+	public Grade(String name) {
+		// TODO Auto-generated constructor stub
+		this.name = name;
+	}
+    
+    
 }

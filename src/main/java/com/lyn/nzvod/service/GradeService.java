@@ -12,7 +12,7 @@ import com.lyn.nzvod.todo.model.Todo;
  *
  */
 public interface GradeService {
-    public Grade add(Grade Grade);
+    public Grade add(String name);
 
     public Grade date(Long GradeID);
 
