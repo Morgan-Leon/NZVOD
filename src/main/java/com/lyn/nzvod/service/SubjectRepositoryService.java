@@ -1,4 +1,4 @@
-/** Created on 2016年10月11日 下午8:34:22 By lyn*/
+/** Created on 2016年10月12日 上午10:21:17 By lyn*/
 
 package com.lyn.nzvod.service;
 
@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lyn.nzvod.model.Grade;
 import com.lyn.nzvod.model.Subject;
-import com.lyn.nzvod.model.Video;
 import com.lyn.nzvod.repository.GradeRepository;
 import com.lyn.nzvod.repository.SubjectRepository;
 import com.lyn.nzvod.repository.VideoRepository;
@@ -21,7 +19,7 @@ import com.lyn.nzvod.repository.VideoRepository;
  *
  */
 @Service
-public class VideoRepositoryService implements VideoService{
+public class SubjectRepositoryService implements SubjectService {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(VideoRepositoryService.class);
 	private VideoRepository videoRepo;
@@ -29,7 +27,7 @@ public class VideoRepositoryService implements VideoService{
 	private SubjectRepository subjectRepo;
 	
     @Autowired
-    public VideoRepositoryService(VideoRepository videoRepo,GradeRepository gradeRepo, SubjectRepository subjectRepo)
+    public SubjectRepositoryService(VideoRepository videoRepo,GradeRepository gradeRepo, SubjectRepository subjectRepo)
     {
     	this.videoRepo = videoRepo;
     	this.gradeRepo = gradeRepo;
@@ -38,49 +36,50 @@ public class VideoRepositoryService implements VideoService{
     
 
 	/* (non-Javadoc)
-	 * @see com.lyn.nzvod.service.VideoService#add(com.lyn.nzvod.model.Video)
+	 * @see com.lyn.nzvod.service.SubjectService#add(com.lyn.nzvod.model.Subject)
 	 */
 	@Override
-	public Video add(Video Video) {
+	public Subject add(Subject Subject) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/* (non-Javadoc)
-	 * @see com.lyn.nzvod.service.VideoService#date(java.lang.Long)
+	 * @see com.lyn.nzvod.service.SubjectService#date(java.lang.Long)
 	 */
 	@Override
-	public Video date(Long VideoID) {
+	public Subject date(Long SubjectID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/* (non-Javadoc)
-	 * @see com.lyn.nzvod.service.VideoService#findById(java.lang.Long)
+	 * @see com.lyn.nzvod.service.SubjectService#findById(java.lang.Long)
 	 */
 	@Override
-	public Video findById(Long id) {
+	public Subject findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/* (non-Javadoc)
-	 * @see com.lyn.nzvod.service.VideoService#deleteById(java.lang.Long)
+	 * @see com.lyn.nzvod.service.SubjectService#deleteById(java.lang.Long)
 	 */
 	@Override
-	public Video deleteById(Long id) {
+	public Subject deleteById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	/* (non-Javadoc)
-	 * @see com.lyn.nzvod.service.VideoService#findAll()
+	 * @see com.lyn.nzvod.service.SubjectService#findAll()
 	 */
 	@Override
-	public List<Video> findAll() {
+	public List<Subject> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 }
