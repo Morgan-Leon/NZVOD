@@ -39,7 +39,7 @@ public class SubjectRepositoryService implements SubjectService {
 	 * @see com.lyn.nzvod.service.SubjectService#add(com.lyn.nzvod.model.Subject)
 	 */
 	@Override
-	public Subject add(Subject Subject) {
+	public Subject add(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}

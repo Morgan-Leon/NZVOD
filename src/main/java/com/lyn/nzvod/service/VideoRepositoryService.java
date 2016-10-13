@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lyn.nzvod.model.Grade;
 import com.lyn.nzvod.model.Subject;
@@ -15,6 +16,10 @@ import com.lyn.nzvod.model.Video;
 import com.lyn.nzvod.repository.GradeRepository;
 import com.lyn.nzvod.repository.SubjectRepository;
 import com.lyn.nzvod.repository.VideoRepository;
+import com.lyn.nzvod.todo.exception.TodoNotFoundException;
+import com.lyn.nzvod.todo.model.Todo;
+
+import javassist.NotFoundException;
 
 /**
  * @author lyn
@@ -77,8 +82,20 @@ public class VideoRepositoryService implements VideoService{
 	/* (non-Javadoc)
 	 * @see com.lyn.nzvod.service.VideoService#findAll()
 	 */
+	@Transactional(readOnly = true)
 	@Override
 	public List<Video> findAll() {
+		// TODO Auto-generated method stub
+		return videoRepo.findAll();
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.lyn.nzvod.service.VideoService#findBySubjectAndGrade(long, long)
+	 */
+	@Transactional(readOnly = true)
+	@Override
+	public List<Video> findBySubjectAndGrade(long subjectId, long gradeId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

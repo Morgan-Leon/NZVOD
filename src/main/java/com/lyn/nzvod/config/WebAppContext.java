@@ -21,7 +21,7 @@ import java.util.Properties;
 @EnableWebMvc
 @ComponentScan(basePackages = {
         "com.lyn.nzvod.common.controller",
-//        "com.lyn.nzvod.todo.controller",
+        "com.lyn.nzvod.todo.controller",
         "com.lyn.nzvod.controller",
         
 })

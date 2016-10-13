@@ -14,7 +14,7 @@ import com.lyn.nzvod.todo.model.Todo;
  */
 public interface SubjectService {
 	
-    public Subject add(Subject Subject);
+    public Subject add(String name);
 
     public Subject date(Long SubjectID);
 

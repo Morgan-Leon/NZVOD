@@ -10,12 +10,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lyn.nzvod.model.Grade;
+import com.lyn.nzvod.model.Subject;
+import com.lyn.nzvod.model.Video;
 import com.lyn.nzvod.service.GradeService;
 import com.lyn.nzvod.service.SubjectService;
 import com.lyn.nzvod.service.VideoService;
@@ -29,7 +32,6 @@ import com.lyn.nzvod.service.VideoService;
 public class MainController {
 	
     private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
-
     
     private VideoService videoService;
     private GradeService gradeService;
@@ -59,11 +61,55 @@ public class MainController {
     
     @RequestMapping(value = "/grades", method = RequestMethod.GET)
     @ResponseBody
-    public List<Grade> findAll() {
-        LOGGER.debug("Finding all todo entries.");
+    public List<Grade> findAllGrades() {
         List<Grade> models = gradeService.findAll();
         LOGGER.debug("Found {} to-do entries.", models.size());
-
         return models;
     }
+    
+    @RequestMapping(value = "/subject", method = RequestMethod.POST)
+    @ResponseBody
+    public Subject addSubject(@Valid @RequestBody String subjectName) {
+    	LOGGER.debug("Adding a new to-do entry with information: {}", subjectName);
+        Subject added = subjectService.add(subjectName);
+        LOGGER.debug("Added a to-do entry with information: {}", added);
+        return added;
+    }
+    
+    @RequestMapping(value = "/subjects", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Subject> findAllSubjects() {
+        List<Subject> models = subjectService.findAll();
+        LOGGER.debug("Found {} to-do entries.", models.size());
+        return models;
+    }
+    
+//    @RequestMapping(value = "/video", method = RequestMethod.POST)
+//    @ResponseBody
+//    public Subject addVideo(@Valid @RequestBody String subjectName) {
+//    	LOGGER.debug("Adding a new to-do entry with information: {}", subjectName);
+//        Video added = subjectService.add(subjectName);
+//        LOGGER.debug("Added a to-do entry with information: {}", added);
+//        return added;
+//    }
+    
+    @RequestMapping(value = "/videos", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Video> findAllVideos() {
+        List<Video> models = videoService.findAll();
+        LOGGER.debug("Found {} to-do entries.", models.size());
+        return models;
+    }
+    
+    @RequestMapping(value = "/subject/{subjectId}/grade/{gradeId}/videos", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Video> findVideosBySubjectAndGrade(@PathVariable("gradeId") long gradeId,
+    											   @PathVariable("subjectId") long subjectId) {
+        List<Video> models = videoService.findBySubjectAndGrade(subjectId, gradeId);
+        LOGGER.debug("Found {} video entries.", models.size());
+        return models;
+    }
+    
+    
+    
 }
