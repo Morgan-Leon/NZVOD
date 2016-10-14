@@ -16,12 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lyn.nzvod.dto.VideoDTO;
 import com.lyn.nzvod.model.Grade;
 import com.lyn.nzvod.model.Subject;
 import com.lyn.nzvod.model.Video;
 import com.lyn.nzvod.service.GradeService;
 import com.lyn.nzvod.service.SubjectService;
 import com.lyn.nzvod.service.VideoService;
+import com.lyn.nzvod.todo.dto.TodoDTO;
 
 /**
  * @author lyn
@@ -38,7 +40,9 @@ public class MainController {
     private SubjectService subjectService;
     
     @Autowired
-    public MainController(VideoService videoService,GradeService gradeService, SubjectService subjectService) {
+    public MainController(VideoService videoService,
+    				GradeService gradeService,
+    				SubjectService subjectService) {
         this.videoService = videoService;
         this.gradeService = gradeService;
         this.subjectService = subjectService;
@@ -84,14 +88,14 @@ public class MainController {
         return models;
     }
     
-//    @RequestMapping(value = "/video", method = RequestMethod.POST)
-//    @ResponseBody
-//    public Subject addVideo(@Valid @RequestBody String subjectName) {
-//    	LOGGER.debug("Adding a new to-do entry with information: {}", subjectName);
-//        Video added = subjectService.add(subjectName);
-//        LOGGER.debug("Added a to-do entry with information: {}", added);
-//        return added;
-//    }
+    @RequestMapping(value = "/video", method = RequestMethod.POST)
+    @ResponseBody
+    public Video addVideo(@Valid @RequestBody VideoDTO videoDto) {
+    	LOGGER.debug("Adding a new to-do entry with information: {}", videoDto);
+        Video added = videoService.add(videoDto);
+        LOGGER.debug("Added a to-do entry with information: {}", added);
+        return added;
+    }
     
     @RequestMapping(value = "/videos", method = RequestMethod.GET)
     @ResponseBody

@@ -41,7 +41,8 @@ public class SubjectRepositoryService implements SubjectService {
 	@Override
 	public Subject add(String name) {
 		// TODO Auto-generated method stub
-		return null;
+		Subject model = new Subject(name);
+		return subjectRepo.saveAndFlush(model);
 	}
 
 	/* (non-Javadoc)
@@ -78,7 +79,7 @@ public class SubjectRepositoryService implements SubjectService {
 	@Override
 	public List<Subject> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return subjectRepo.findAll();
 	}
 	
 

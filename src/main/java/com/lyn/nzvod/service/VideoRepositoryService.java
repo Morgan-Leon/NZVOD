@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lyn.nzvod.dto.VideoDTO;
 import com.lyn.nzvod.model.Grade;
 import com.lyn.nzvod.model.Subject;
 import com.lyn.nzvod.model.Video;
@@ -46,16 +47,20 @@ public class VideoRepositoryService implements VideoService{
 	 * @see com.lyn.nzvod.service.VideoService#add(com.lyn.nzvod.model.Video)
 	 */
 	@Override
-	public Video add(Video Video) {
+	public Video add(VideoDTO dto) {
 		// TODO Auto-generated method stub
-		return null;
+		Video video = Video.getBuilder(dto.getName(), dto.getUrl(), dto.getGradeId(),
+				dto.getSubjectId(), dto.getAuthor(), dto.getUploadUser())
+				.description(dto.getDescription()).build();
+		
+		return videoRepo.saveAndFlush(video);
 	}
 
 	/* (non-Javadoc)
 	 * @see com.lyn.nzvod.service.VideoService#date(java.lang.Long)
 	 */
 	@Override
-	public Video date(Long VideoID) {
+	public Video date(long VideoID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -64,7 +69,7 @@ public class VideoRepositoryService implements VideoService{
 	 * @see com.lyn.nzvod.service.VideoService#findById(java.lang.Long)
 	 */
 	@Override
-	public Video findById(Long id) {
+	public Video findById(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -73,7 +78,7 @@ public class VideoRepositoryService implements VideoService{
 	 * @see com.lyn.nzvod.service.VideoService#deleteById(java.lang.Long)
 	 */
 	@Override
-	public Video deleteById(Long id) {
+	public Video deleteById(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

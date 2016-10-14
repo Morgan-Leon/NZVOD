@@ -32,7 +32,7 @@ public class AbstractEntity {
     protected DateTime creationTime;
     
     @Column(nullable = true, length = MAX_LENGTH_DESCRIPTION)
-    private String description;
+    protected String description;
 
     @PrePersist
     public void prePersist() {

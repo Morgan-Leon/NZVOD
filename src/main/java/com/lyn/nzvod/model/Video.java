@@ -3,8 +3,10 @@ package com.lyn.nzvod.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
@@ -44,9 +46,32 @@ public class Video extends AbstractEntity{
     
     @Column(name = "uploadUser", nullable = true, length = MAX_LENGTH_NAME)
     private String uploadUser;
+    
+    @Column(name = "thumbnail", nullable = true, length = MAX_LENGTH_URL)
+    private String thumbnail;
+    
+	@Column(name = "thumbnailUrl", nullable = true, length = MAX_LENGTH_URL)
+    private String thumbnailUrl;
     	
     @Column(name = "views", nullable = true)
     private int views;
+    
+    public String getThumbnail() {
+		return thumbnail;
+	}
+    
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
+	public String getThumbnailUrl() {
+		return thumbnailUrl;
+	}
+
+	public void setThumbnailUrl(String thumbnailUrl) {
+		this.thumbnailUrl = thumbnailUrl;
+	}
+
 
 	public String getName() {
 		return name;
@@ -115,9 +140,58 @@ public class Video extends AbstractEntity{
     @PrePersist
     public void prePersist() {
         DateTime now = DateTime.now();
+        creationTime = now;
         modificationTime = now;
     }
-	
     
+    @PreUpdate
+    public void preUpdate() {
+        modificationTime = DateTime.now();
+    }
+
+
+	
+    /**
+	 * 
+	 */
+	public Video() {
+		// TODO Auto-generated constructor stub
+	}
+	
+    public static Builder getBuilder(String name, String url, long gradeId, long subjectId, 
+    					String author, String uploadUser) {
+        return new Builder(name,url,gradeId,subjectId,author,uploadUser);
+    }
+    
+    public static class Builder {
+
+        private Video built;
+
+        public Builder(String name, String url, long gradeId, long subjectId, 
+        				String author, String uploadUser) {
+            built = new Video();
+            built.name = name;
+            built.url = url;
+            built.gradeId = gradeId;
+            built.subjectId = subjectId;
+            built.author = author;
+            built.uploadUser = uploadUser;            
+        }
+
+        public Video build() {
+            return built;
+        }
+
+        public Builder description(String description) {
+            built.description = description;
+            return this;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
+
     
 }

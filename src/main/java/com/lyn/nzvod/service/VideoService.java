@@ -2,6 +2,7 @@ package com.lyn.nzvod.service;
 
 import java.util.List;
 
+import com.lyn.nzvod.dto.VideoDTO;
 import com.lyn.nzvod.model.Video;
 import com.lyn.nzvod.todo.model.Todo;
 
@@ -13,13 +14,13 @@ import com.lyn.nzvod.todo.model.Todo;
 public interface VideoService {
 
 		
-    public Video add(Video Video);
+    public Video add(VideoDTO videoDto);
 
-    public Video date(Long VideoID);
+    public Video date(long videoID);
 
-    public Video findById(Long id);
+    public Video findById(long id);
 
-    public Video deleteById(Long id);
+    public Video deleteById(long id);
     
     /**
      * Returns a list of to-do entries.
