@@ -123,8 +123,20 @@ public class VideoRepositoryService implements VideoService{
 	@Override
 	public List<Video> searchByName(String name, long subjectId, long gradeId) {
 		// TODO Auto-generated method stub
-		
-		return videoRepo.searchByName(name, subjectId, gradeId);
+		List<Video> vList;
+		if (subjectId == 0 && gradeId == 0) {
+			vList = videoRepo.searchByName(name);
+		}
+		else if (subjectId == 0) {
+			vList = videoRepo.searchByNameAndGradeId(name, gradeId);
+		}
+		else if (gradeId == 0) {
+			vList = videoRepo.searchByNameAndSubjectId(name, subjectId);
+		}
+		else {
+			vList = videoRepo.findBySubjectIdAndGradeId(subjectId, gradeId);
+		}
+		return vList;
 	}
 
 }

@@ -10,6 +10,8 @@ ctrls.controller('mainController',['$scope','$stateParams','GetSubjects',
 $scope.main = {
   selectedSubjectID : 1,
   selectedGradeID : 0,
+  searchTerm : "",
+  // thumbNailPlaceHolder : "/images/thumbnails/placeHolder.jpg"
 };
 $scope.videos = [];
 
@@ -139,24 +141,16 @@ $scope.videos = [];
       getVideos();
     };
 
+    $scope.$watch('main.searchTerm',function (newValue, oldValue) {
+      // body...
+      $scope.videos = GetVideosBySearchName.query(
+        {
+          name:newValue,
+          subjectId:$scope.main.selectedSubjectID,
+          gradeId:$scope.main.selectedGradeID
+        })
+    })
 
-    $scope.isAble = function(iterm){
-      if (iterm.status === "已结束") {
-        return true;
-      }
-      else {
-        return false;
-      }
-    };
-
-    $scope.getHref = function(item){
-      if ($scope.isAble(item)) {
-        return "";
-      }
-      else {
-        return "#/update/"+item.id;
-      }
-    };
 
 //=============================================================================
 
@@ -178,6 +172,17 @@ $scope.videos = [];
     .sidebar('attach events', '.toc.item');
 
 }]);
+
+ctrls.filter('formatThumbnailsUrl',function () {
+  // body...
+  return function (input) {
+    // body...
+    if (input==null || input == "") {
+      return "/images/placeHolder.jpg";
+    }
+    else return input;
+  }
+});
 
 ctrls.filter('formatRegion', function () {
     return function (input) {

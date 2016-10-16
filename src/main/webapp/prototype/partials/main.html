@@ -5,7 +5,7 @@
       <a class="{{'item ' + subject.color}}" ng-repeat="subject in subjects" ng-class="{'active':subject.id==main.selectedSubjectID}" ng-click="selectSubject(subject)">{{subject.name}}</a>
   </div>
   <div class="ui mini transparent icon input" style="width:28em;margin:4px">
-    <input type="text" placeholder="搜索">
+    <input type="text" placeholder="搜索" ng-model="main.searchTerm">
     <i class="search icon"></i>
   </div>
 </div>
@@ -53,16 +53,18 @@
 
         <div class="ui cards" >
           <div class="card" ng-repeat="video in videos">
-            <a class="image">
-              <img src="/images/thumbnails/steve.jpg">
+            <a class="image" href="{{video.url}}">
+              <img src="{{video.thumbnailUrl | formatThumbnailsUrl }}">
+              <!-- <video src="{{video.url}}" controls poster="{{video.thumbnailUrl | formatThumbnailsUrl }}"></video> -->
             </a>
             <div class="content">
-              <a class="header">{{video.name}}</a>
+              <a class="header" >{{video.name}}</a>
               <div class="meta">
                 <a>{{video.author}}</a>
               </div>
               <div class="description">
                 {{video.description}}
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{video.url}}">下载</a></span>
               </div>
             </div>
           </div>

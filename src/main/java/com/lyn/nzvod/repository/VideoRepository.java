@@ -11,12 +11,31 @@ import com.lyn.nzvod.model.Video;
 public interface VideoRepository extends JpaRepository<Video, Long> {
 	
 	@Query("SELECT Distinct(v) FROM Video v WHERE v.name like ('%' || :name || '%')  "
+			  + "AND v.deleted=0 ORDER BY v.modificationTime DESC")
+	ArrayList<Video> searchByName(
+			@Param("name")String name);
+	
+	@Query("SELECT Distinct(v) FROM Video v WHERE v.name like ('%' || :name || '%')  "
 			  + "AND v.subjectId=(:subjectId) AND gradeId=(:gradeId) "
 			  + "AND v.deleted=0 ORDER BY v.modificationTime DESC")
 	ArrayList<Video> searchByName(
 			@Param("name")String name,
 			@Param("subjectId")Long subjectId,
 			@Param("gradeId")Long gradeId);
+	
+	@Query("SELECT Distinct(v) FROM Video v WHERE v.name like ('%' || :name || '%')  "
+			  + " AND v.gradeId=(:gradeId) "
+			  + "AND v.deleted=0 ORDER BY v.modificationTime DESC")
+	ArrayList<Video> searchByNameAndGradeId(
+			@Param("name")String name,
+			@Param("gradeId")Long gradeId);
+	
+	@Query("SELECT Distinct(v) FROM Video v WHERE v.name like ('%' || :name || '%')  "
+			  + "AND v.subjectId=(:subjectId) "
+			  + "AND v.deleted=0 ORDER BY v.modificationTime DESC")
+	ArrayList<Video> searchByNameAndSubjectId(
+			@Param("name")String name,
+			@Param("subjectId")Long subjectId);
 	
 	@Query("SELECT Distinct(v) FROM Video v WHERE subjectId=(:subjectId)"
 		  +" AND gradeId=(:gradeId) AND v.deleted=0 ORDER BY v.modificationTime DESC")
