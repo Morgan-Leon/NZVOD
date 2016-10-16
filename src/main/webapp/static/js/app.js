@@ -21,6 +21,12 @@ routeApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvide
           controller: "mainController"
       })
       //add page
+      .state('player', {
+          url: '/player/:id',
+          templateUrl: "partials/player.html",
+          controller: "playerController"
+      })
+      //add page
       .state('add', {
           url: '/',
           templateUrl: "partials/add.html",

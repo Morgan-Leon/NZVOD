@@ -53,8 +53,8 @@
 
         <div class="ui cards" >
           <div class="card" ng-repeat="video in videos">
-            <a class="image" href="{{video.url}}">
-              <img src="{{video.thumbnailUrl | formatThumbnailsUrl }}">
+            <a class="image" ng-href="{{'#/player/' + video.id}}">
+              <img ng-src="{{video.thumbnailUrl | formatThumbnailsUrl }}">
               <!-- <video src="{{video.url}}" controls poster="{{video.thumbnailUrl | formatThumbnailsUrl }}"></video> -->
             </a>
             <div class="content">
