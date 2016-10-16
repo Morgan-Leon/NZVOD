@@ -2,13 +2,14 @@
 var ctrls = angular.module('nourControllers', ['nourConfig', 'ngResource',
     'mainServices']);
 
-ctrls.controller('mainController',['$scope','$stateParams','GetSubjects','GetVideosAll',
-        function($scope,$stateParams,GetSubjects,GetVideosAll){
+ctrls.controller('mainController',['$scope','$stateParams','GetSubjects','GetVideosAll','GetVideosBySubjectAndGrade',
+        function($scope,$stateParams,GetSubjects,GetVideosAll,GetVideosBySubjectAndGrade){
 
 $scope.main = {
   selectedSubjectID : 1,
   selectedGradeID : 0,
 };
+$scope.videos = [];
 
 //----Stores
   GetSubjects.query({},function (data) {
@@ -47,7 +48,19 @@ $scope.main = {
     // body...
     $scope.videos = data;
     console.log(data);
-  })
+  });
+
+  getVideos = function () {
+    // body...
+    GetVideosBySubjectAndGrade.query(
+      {subjectId:$scope.main.selectedSubjectID,gradeId:$scope.main.selectedGradeID},
+      function (data) {
+      // body...
+      console.log(data);
+      $scope.videos = data;
+    })
+  }
+
 
 //=============================================================================
 
@@ -57,7 +70,16 @@ $scope.main = {
       // body...
       console.log(item);
       $scope.main.selectedSubjectID = item.id;
+      getVideos();
     };
+
+    $scope.selectGrade = function (item){
+      // body...
+      console.log(item);
+      $scope.main.selectedGradeID = item.id;
+      getVideos();
+    };
+
 
     $scope.isAble = function(iterm){
       if (iterm.status === "已结束") {

@@ -102,7 +102,20 @@ public class VideoRepositoryService implements VideoService{
 	@Override
 	public List<Video> findBySubjectAndGrade(long subjectId, long gradeId) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Video> vList;
+		if (subjectId == 0 && gradeId == 0) {
+			vList = videoRepo.findAll();
+		}
+		else if (subjectId == 0) {
+			vList = videoRepo.findByGradeId(gradeId);
+		}
+		else if (gradeId == 0) {
+			vList = videoRepo.findBySubjectId(subjectId);
+		}
+		else {
+			vList = videoRepo.findBySubjectIdAndGradeId(subjectId, gradeId);
+		}
+		return vList;
 	}
 
 }

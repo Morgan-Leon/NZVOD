@@ -33,13 +33,15 @@
 
   </div>
 
-  <div class="ui grid" style="margin-top:5em">
+  <div class="ui grid" style="margin-top:5em;min-height: 600px;">
     <div class="one wide column">
     </div>
     <div class="two wide column">
         <div class="ui basic segment">
           <div class="right ui vertical buttons">
-            <div class="ui large button" ng-repeat="grade in grades">{{grade.name}}</div>
+            <div class="ui large button" ng-repeat="grade in grades"
+                 ng-class="{'active':grade.id==main.selectedGradeID}"
+                 ng-click="selectGrade(grade)">{{grade.name}}</div>
           </div>
         </div>
     </div>

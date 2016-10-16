@@ -14,4 +14,12 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
 		  +" AND gradeId=(:gradeId) AND v.deleted=0 ORDER BY v.modificationTime DESC")
 	ArrayList<Video> findBySubjectIdAndGradeId(@Param("subjectId")Long subjectId,
 											   @Param("gradeId")Long gradeId);
+	
+	
+	@Query("SELECT Distinct(v) FROM Video v WHERE v.gradeId=(:gradeId) AND v.deleted=0 ORDER BY v.modificationTime DESC")
+	ArrayList<Video> findByGradeId(@Param("gradeId")Long gradeId);
+	
+	
+	@Query("SELECT Distinct(v) FROM Video v WHERE v.subjectId=(:subjectId) AND v.deleted=0 ORDER BY v.modificationTime DESC")
+	ArrayList<Video> findBySubjectId(@Param("subjectId")Long subjectId);
 }	

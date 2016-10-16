@@ -25,7 +25,7 @@ Gat Videos By Subject & Grade
 */
 mainServices.factory('GetVideosBySubjectAndGrade',['$resource','config',
   function($resource,config){
-    return $resource(config.HOST + "",
-      {},{}
+    return $resource(config.HOST + "/subject/:subjectId/grade/:gradeId/videos",
+      {subjectId:'@_subjectId',gradeId:'@_gradeId'},{}
   );
   }])
