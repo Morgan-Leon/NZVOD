@@ -2,8 +2,10 @@
 var ctrls = angular.module('nourControllers', ['nourConfig', 'ngResource',
     'mainServices']);
 
-ctrls.controller('mainController',['$scope','$stateParams','GetSubjects','GetVideosAll','GetVideosBySubjectAndGrade',
-        function($scope,$stateParams,GetSubjects,GetVideosAll,GetVideosBySubjectAndGrade){
+ctrls.controller('mainController',['$scope','$stateParams','GetSubjects',
+        'GetVideosAll','GetVideosBySubjectAndGrade','GetVideosBySearchName',
+        function($scope,$stateParams,GetSubjects,GetVideosAll,
+                 GetVideosBySubjectAndGrade,GetVideosBySearchName){
 
 $scope.main = {
   selectedSubjectID : 1,

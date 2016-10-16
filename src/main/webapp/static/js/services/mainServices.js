@@ -29,3 +29,15 @@ mainServices.factory('GetVideosBySubjectAndGrade',['$resource','config',
       {subjectId:'@_subjectId',gradeId:'@_gradeId'},{}
   );
   }])
+
+
+  /*
+  Gat Videos By Subject & Grade
+  */
+  mainServices.factory('GetVideosBySearchName',['$resource','config',
+    function($resource,config){
+      return $resource(config.HOST + "/videos/conditions?name=:name&subjectId=:subjectId&gradeId=:gradeId",
+        {name:'@_nameId',subjectId:'@_subjectId',gradeId:'@_gradeId'},
+        {}
+    );
+  }])

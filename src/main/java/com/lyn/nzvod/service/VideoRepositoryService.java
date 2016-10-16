@@ -124,7 +124,7 @@ public class VideoRepositoryService implements VideoService{
 	public List<Video> searchByName(String name, long subjectId, long gradeId) {
 		// TODO Auto-generated method stub
 		
-		return searchByName(name, subjectId, gradeId);
+		return videoRepo.searchByName(name, subjectId, gradeId);
 	}
 
 }
