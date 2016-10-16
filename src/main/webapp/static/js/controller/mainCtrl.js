@@ -12,12 +12,69 @@ $scope.main = {
 $scope.videos = [];
 
 //----Stores
-  GetSubjects.query({},function (data) {
-    // body...
-    $scope.subjects = data;
-  });
+  // GetSubjects.query({},function (data) {
+  //   // body...
+  //   $scope.subjects = data;
+  // });
+
+  $scope.subjects = [
+    {
+      id : 0,
+      name : '全部',
+      color : 'black'
+    },
+    {
+      id : 1,
+      name : '语文',
+      color : 'purple'
+    },
+    {
+      id : 2,
+      name : '数学',
+      color : 'green'
+    },
+    {
+      id : 3,
+      name : '英语',
+      color : 'pink'
+    },
+    {
+      id : 4,
+      name : '音乐',
+      color : 'yellow'
+    },
+    {
+      id : 5,
+      name : '美术',
+      color : 'teal'
+    },
+    {
+      id : 6,
+      name : '科学',
+      color : 'blue'
+    },
+    {
+      id : 7,
+      name : '品社',
+      color : 'olive'
+    },
+    {
+      id : 8,
+      name : '体育',
+      color : 'violet'
+    },
+    {
+      id : 9,
+      name : '信息',
+      color : 'brown'
+    },
+  ];
 
   $scope.grades = [
+    {
+      id : 0,
+      name : '全部'
+    },
     {
       id : 1,
       name : '一年级'

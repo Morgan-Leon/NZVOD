@@ -29,6 +29,8 @@ public interface VideoService {
     public List<Video> findAll();
     
     public List<Video> findBySubjectAndGrade(long subjectId,long  gradeId);
+    
+    public List<Video> searchByName(String name, long subjectId, long gradeId);
 
 
 //	Page<Video> findAll(Pageable pageable);

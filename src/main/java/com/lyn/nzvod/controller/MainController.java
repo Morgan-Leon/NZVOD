@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lyn.nzvod.dto.VideoDTO;
@@ -110,6 +111,23 @@ public class MainController {
     public List<Video> findVideosBySubjectAndGrade(@PathVariable("gradeId") long gradeId,
     											   @PathVariable("subjectId") long subjectId) {
         List<Video> models = videoService.findBySubjectAndGrade(subjectId, gradeId);
+        LOGGER.debug("Found {} video entries.", models.size());
+        return models;
+    }
+    
+    @RequestMapping(value = "/videos/conditions", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Video> searchVideosByName(
+    	    @RequestParam(value = "name", required = false) String name,
+    	    @RequestParam(value = "subjectId", required = false) long subjectId,
+    	    @RequestParam(value = "gradeId", required = false)  long gradeId) {
+    	List<Video> models;
+        if (name == null || name == "") {
+			return findVideosBySubjectAndGrade(gradeId, subjectId);
+		}
+        else {
+        	models = videoService.searchByName(name, subjectId, gradeId);
+        }
         LOGGER.debug("Found {} video entries.", models.size());
         return models;
     }

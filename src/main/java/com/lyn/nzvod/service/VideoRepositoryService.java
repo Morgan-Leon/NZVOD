@@ -2,6 +2,7 @@
 
 package com.lyn.nzvod.service;
 
+import java.awt.image.BandedSampleModel;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -116,6 +117,14 @@ public class VideoRepositoryService implements VideoService{
 			vList = videoRepo.findBySubjectIdAndGradeId(subjectId, gradeId);
 		}
 		return vList;
+	}
+
+
+	@Override
+	public List<Video> searchByName(String name, long subjectId, long gradeId) {
+		// TODO Auto-generated method stub
+		
+		return searchByName(name, subjectId, gradeId);
 	}
 
 }
