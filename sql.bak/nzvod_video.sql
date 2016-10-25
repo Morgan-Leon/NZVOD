@@ -1,8 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.12, for osx10.9 (x86_64)
---
--- Host: localhost    Database: nzvod
--- ------------------------------------------------------
--- Server version	5.7.15
+﻿
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -47,7 +43,7 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (1,'2016-10-16 06:32:48','微课点播平台','南庄小学',0,1,'2016-10-16 06:32:48','视频一',1,NULL,'/images/thumbnails/1.jpg',NULL,'/videos/1.mp4',0),(2,'2016-10-16 06:33:00','微课点播平台','南庄小学',0,1,'2016-10-16 06:33:00','视频二',1,NULL,'/images/thumbnails/2.jpg',NULL,'/videos/2.mp4',0),(3,'2016-10-16 06:33:03','微课点播平台','南庄小学',0,1,'2016-10-16 06:33:03','视频三',1,NULL,'/images/thumbnails/3.jpg',NULL,'/videos/3.mp4',0),(4,'2016-10-16 06:33:13','微课点播平台','南庄小学',0,1,'2016-10-16 06:33:13','视频四',2,NULL,'/images/thumbnails/4.jpg',NULL,'/videos/4.mp4',0),(5,'2016-10-16 06:33:19','微课点播平台','南庄小学',0,2,'2016-10-16 06:33:19','视频五',2,NULL,'/images/thumbnails/5.jpg',NULL,'/videos/5.mp4',0);
+INSERT INTO `video` VALUES (1,'2016-10-16 06:32:48','微课点播平台','南庄小学',0,1,'2016-10-16 06:32:48','视频一',1,NULL,'../images/thumbnails/1.jpg',NULL,'../videos/1.mp4',0),(2,'2016-10-16 06:33:00','微课点播平台','南庄小学',0,1,'2016-10-16 06:33:00','视频二',1,NULL,'../images/thumbnails/2.jpg',NULL,'../videos/2.mp4',0),(3,'2016-10-16 06:33:03','微课点播平台','南庄小学',0,1,'2016-10-16 06:33:03','视频三',1,NULL,'../images/thumbnails/3.jpg',NULL,'../videos/3.mp4',0),(4,'2016-10-16 06:33:13','微课点播平台','南庄小学',0,1,'2016-10-16 06:33:13','视频四',2,NULL,'../images/thumbnails/4.jpg',NULL,'../videos/4.mp4',0),(5,'2016-10-16 06:33:19','微课点播平台','南庄小学',0,2,'2016-10-16 06:33:19','视频五',2,NULL,'../images/thumbnails/5.jpg',NULL,'../videos/5.mp4',0);
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
