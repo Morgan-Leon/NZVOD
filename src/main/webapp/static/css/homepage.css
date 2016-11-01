@@ -82,3 +82,8 @@
     font-size: 1.5em;
   }
 }
+
+.grid .segment .grade.button{
+  /*width: 4em;*/
+  height: 72px;
+}

@@ -75,33 +75,57 @@ $scope.videos = [];
   ];
 
   $scope.grades = [
-    {
-      id : 0,
-      name : '全部'
-    },
+    // {
+    //   id : 0,
+    //   name : '全部'
+    // },
     {
       id : 1,
-      name : '一年级'
+      name : '一年级上'
     },
     {
       id : 2,
-      name : '二年级'
+      name : '一年级下'
     },
     {
       id : 3,
-      name : '三年级'
+      name : '二年级上'
     },
     {
       id : 4,
-      name : '四年级'
+      name : '二年级下'
     },
     {
       id : 5,
-      name : '五年级'
+      name : '三年级上'
     },
     {
       id : 6,
-      name : '六年级'
+      name : '三年级下'
+    },
+    {
+      id : 7,
+      name : '四年级上'
+    },
+    {
+      id : 8,
+      name : '四年级下'
+    },
+    {
+      id : 9,
+      name : '五年级上'
+    },
+    {
+      id : 10,
+      name : '五年级下'
+    },
+    {
+      id : 11,
+      name : '六年级上'
+    },
+    {
+      id : 12,
+      name : '六年级下'
     }
   ];
 
@@ -186,6 +210,18 @@ ctrls.filter('formatThumbnailsUrl',function () {
       return "/images/placeHolder.jpg";
     }
     else return input;
+  }
+});
+
+ctrls.filter('formatGrades',function () {
+  // body...
+  return function (input) {
+     if (input%2 == 0) {
+       return "下";
+     }
+     else {
+       return "上";
+     }
   }
 });
 
