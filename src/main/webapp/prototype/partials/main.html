@@ -29,7 +29,7 @@
        微课点播平台
       </h1>
       <h2>有为有不为，知足知不足</h2>
-        <a class="ui huge primary button">出发 <i class="right arrow icon"></i></a>
+        <a class="ui huge primary button">出发 <i class="right arrow icon"></i></a>`
     </div>
   </div>
 
@@ -42,10 +42,14 @@
     <div class="two wide column">
         <div class="ui basic segment">
           <div class="right ui vertical buttons">
-            <div class="ui large button" ng-repeat="grade in grades"
+            <div class="ui  large button" style="width:7em"
+                 ng-repeat="grade in grades"
                  ng-class="{'active':grade.id==main.selectedGradeID}"
                  ng-click="selectGrade(grade)">{{grade.name}}</div>
           </div>
+          <!-- 视频上传 -->
+          <button class="ui green large button" style="width:7em;margin-top:1em" ng-click="videoUpload()">上传视频</button>
+
         </div>
     </div>
     <div class="thirteen wide column">
@@ -75,7 +79,6 @@
   </div>
 
 
-
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
@@ -98,5 +101,19 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+<!-- UPLOAD MODAL -->
+<div class="ui modal">
+  <div class="header">Header</div>
+  <div class="content">
+    <p></p>
+  </div>
+  <div class="actions">
+    <div class="ui approve button">Approve</div>
+    <div class="ui button">Neutral</div>
+    <div class="ui cancel button">Cancel</div>
   </div>
 </div>

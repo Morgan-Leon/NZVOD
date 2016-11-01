@@ -111,17 +111,6 @@ $scope.videos = [];
     console.log(data);
   });
 
-  getVideos = function () {
-    // body...
-    GetVideosBySubjectAndGrade.query(
-      {subjectId:$scope.main.selectedSubjectID,gradeId:$scope.main.selectedGradeID},
-      function (data) {
-      // body...
-      console.log(data);
-      $scope.videos = data;
-    })
-  }
-
 
 //=============================================================================
 
@@ -150,6 +139,22 @@ $scope.videos = [];
           gradeId:$scope.main.selectedGradeID
         })
     })
+
+    getVideos = function () {
+      // body...
+      GetVideosBySubjectAndGrade.query(
+        {subjectId:$scope.main.selectedSubjectID,gradeId:$scope.main.selectedGradeID},
+        function (data) {
+        // body...
+        console.log(data);
+        $scope.videos = data;
+      })
+    };
+
+    videoUpload = function () {
+      // body...
+      $('.ui.modal').modal('show');
+    };
 
 
 //=============================================================================
