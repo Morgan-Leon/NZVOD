@@ -1,0 +1,55 @@
+<div class="nzvodUpload  container">
+  <div class="ui orange segment ">
+    <form class="ui form">
+    <div class="field">
+      <label>名称*</label>
+      <input type="text" name="first-name" placeholder="视频文件名，包含扩展名">
+    </div>
+
+    <div class="field">
+      <label>年级*</label>
+      <div class="ui fluid selection dropdown" ui-dropdown>
+        <input type="hidden" name="年级">
+        <i class="dropdown icon"></i>
+        <div class="default text">请选择年级</div>
+        <div class="menu">
+          <div class="item"
+               ng-repeat = "grade in grades"
+               data-value="{{grade.id}}">{{grade.name}}
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>科目*</label>
+      <div class="ui fluid selection dropdown" ui-dropdown>
+        <input type="hidden" name="科目">
+        <i class="dropdown icon"></i>
+        <div class="default text">请选择科目</div>
+        <div class="menu">
+          <div class="item"
+               ng-repeat = "subject in subjects"
+               data-value="{{subject.id}}">{{subject.name}}
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>作者</label>
+      <input type="text" name="last-name" placeholder="作者">
+    </div>
+
+    <div class="field">
+      <label>描述</label>
+      <input type="text" name="last-name" placeholder="描述">
+    </div>
+
+
+    <button class="ui green button" type="submit">上传视频</button>
+  </form>
+
+  </div>
+
+</div>

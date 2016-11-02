@@ -1,10 +1,11 @@
 //mainCtrl.js
 var ctrls = angular.module('nourControllers', ['nourConfig', 'ngResource',
-    'mainServices']);
+    'mainServices'
+    ]);
 
-ctrls.controller('mainController',['$scope','$stateParams','GetSubjects',
+ctrls.controller('mainController',['$scope','$stateParams','GetSubjects','GetGrades',
         'GetVideosAll','GetVideosBySubjectAndGrade','GetVideosBySearchName',
-        function($scope,$stateParams,GetSubjects,GetVideosAll,
+        function($scope,$stateParams,GetSubjects,GetGrades,GetVideosAll,
                  GetVideosBySubjectAndGrade,GetVideosBySearchName){
 
 $scope.main = {
@@ -21,113 +22,9 @@ $scope.videos = [];
   //   $scope.subjects = data;
   // });
 
-  $scope.subjects = [
-    {
-      id : 0,
-      name : '全部',
-      color : 'black'
-    },
-    {
-      id : 1,
-      name : '语文',
-      color : 'purple'
-    },
-    {
-      id : 2,
-      name : '数学',
-      color : 'green'
-    },
-    {
-      id : 3,
-      name : '英语',
-      color : 'pink'
-    },
-    {
-      id : 4,
-      name : '音乐',
-      color : 'yellow'
-    },
-    {
-      id : 5,
-      name : '美术',
-      color : 'teal'
-    },
-    {
-      id : 6,
-      name : '科学',
-      color : 'blue'
-    },
-    {
-      id : 7,
-      name : '品社',
-      color : 'olive'
-    },
-    {
-      id : 8,
-      name : '体育',
-      color : 'violet'
-    },
-    {
-      id : 9,
-      name : '信息',
-      color : 'brown'
-    },
-  ];
+  $scope.subjects = GetSubjects;
 
-  $scope.grades = [
-    // {
-    //   id : 0,
-    //   name : '全部'
-    // },
-    {
-      id : 1,
-      name : '一年级上'
-    },
-    {
-      id : 2,
-      name : '一年级下'
-    },
-    {
-      id : 3,
-      name : '二年级上'
-    },
-    {
-      id : 4,
-      name : '二年级下'
-    },
-    {
-      id : 5,
-      name : '三年级上'
-    },
-    {
-      id : 6,
-      name : '三年级下'
-    },
-    {
-      id : 7,
-      name : '四年级上'
-    },
-    {
-      id : 8,
-      name : '四年级下'
-    },
-    {
-      id : 9,
-      name : '五年级上'
-    },
-    {
-      id : 10,
-      name : '五年级下'
-    },
-    {
-      id : 11,
-      name : '六年级上'
-    },
-    {
-      id : 12,
-      name : '六年级下'
-    }
-  ];
+  $scope.grades = GetGrades;
 
   GetVideosAll.query({},function (data) {
     // body...

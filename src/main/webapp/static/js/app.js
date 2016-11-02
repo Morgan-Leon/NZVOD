@@ -20,6 +20,12 @@ routeApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvide
           templateUrl: "partials/main.html",
           controller: "mainController"
       })
+      //uplode page
+      .state('upload', {
+          url: '/upload',
+          templateUrl: "partials/upload.html",
+          controller: "uploadController"
+      })
       //add page
       .state('player', {
           url: '/player/:id',

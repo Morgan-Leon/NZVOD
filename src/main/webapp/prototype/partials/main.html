@@ -39,15 +39,15 @@
   <div name="contentGrid" class="ui grid" style="margin-top:2em;min-height: 600px;">
     <div class="one wide column">
     </div>
-    <div class="two wide column">
+    <div class="two wide column" style="margin-left:-3em;">
         <div class="ui basic segment">
-          <span class="right ui vertical buttons "  style="width:50%;float:left">
-            <div class="ui grade button">一年级</div>
-            <div class="ui grade button">二年级</div>
-            <div class="ui grade button">三年级</div>
-            <div class="ui grade button">四年级</div>
-            <div class="ui grade button">五年级</div>
-            <div class="ui grade button">六年级</div>
+          <span class="right ui vertical buttons "  style="width:50%;float:left;">
+            <div class="ui grade label">一年级</div>
+            <div class="ui grade label">二年级</div>
+            <div class="ui grade label">三年级</div>
+            <div class="ui grade label">四年级</div>
+            <div class="ui grade label">五年级</div>
+            <div class="ui grade label">六年级</div>
           </span>
           <span class="right ui vertical buttons" style="width:50%">
             <div class="ui  button" style=""
@@ -56,7 +56,7 @@
                  ng-click="selectGrade(grade)">{{grade.id | formatGrades}}</div>
           </span>
           <!-- 视频上传 -->
-          <button class="ui green button" style="width:8em;margin-top:1em" ng-click="videoUpload()">上传视频</button>
+          <!-- <button class="ui green button" style="width:8em;margin-top:1em" ng-click="videoUpload()">上传视频</button> -->
 
         </div>
     </div>

@@ -83,7 +83,22 @@
   }
 }
 
-.grid .segment .grade.button{
+.grid .segment .grade.label{
   /*width: 4em;*/
+  padding-top: 3em;
   height: 72px;
+  /*font-size: 1.2em;*/
+  margin-right: 0px;
+  background-color: #E0E1E2;
+  border-radius:0;
+}
+
+.nzvodUpload{
+  margin-top: 5em;
+  /*background-color: #AAAAAA;*/
+
+}
+
+.nzvodUpload .form .button{
+  width: 8em;
 }
