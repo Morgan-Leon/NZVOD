@@ -66,17 +66,17 @@
         <div class="ui cards" >
           <div class="card" ng-repeat="video in videos">
             <a class="image" ng-href="{{'#/player/' + video.id}}">
-              <img ng-src="{{video.thumbnailUrl | formatThumbnailsUrl }}">
+              <img ng-src="{{video.thumbnailUrl | formatThumbnailsUrl }}" style="width:290px;height:290px;">
               <!-- <video src="{{video.url}}" controls poster="{{video.thumbnailUrl | formatThumbnailsUrl }}"></video> -->
             </a>
             <div class="content">
-              <a class="header" >{{video.name}}</a>
+              <a class="header" >{{video.name | formatVideoName }}</a>
               <div class="meta">
                 <a>{{video.author}}</a>
               </div>
               <div class="description">
                 {{video.description}}
-                <span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{video.url}}">下载</a></span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{video.url + video.name}}">下载</a></span>
               </div>
             </div>
           </div>

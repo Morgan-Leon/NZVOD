@@ -72,7 +72,7 @@ public class VideoRepositoryService implements VideoService{
 	@Override
 	public Video findById(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return videoRepo.findOne(id);
 	}
 
 	/* (non-Javadoc)

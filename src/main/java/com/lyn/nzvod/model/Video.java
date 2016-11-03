@@ -51,7 +51,7 @@ public class Video extends AbstractEntity{
     private String thumbnail;
     
 	@Column(name = "thumbnailUrl", nullable = true, length = MAX_LENGTH_URL)
-    private String thumbnailUrl;
+    private String thumbnailUrl = "../images/thumbnails/";
     	
     @Column(name = "views", nullable = true)
     private int views;
@@ -174,8 +174,14 @@ public class Video extends AbstractEntity{
             built.url = url;
             built.gradeId = gradeId;
             built.subjectId = subjectId;
-            built.author = author;
-            built.uploadUser = uploadUser;            
+
+            if (author.length() <=0) 
+            	built.author = "南庄小学";
+            else
+                built.author = author;
+            
+            built.uploadUser = uploadUser; 
+            built.thumbnailUrl += (name.substring(0,name.indexOf('.')) + ".jpg");
         }
 
         public Video build() {
@@ -183,6 +189,11 @@ public class Video extends AbstractEntity{
         }
 
         public Builder description(String description) {
+			if (description.length() <=0) 
+            	built.description = built.name;
+            else
+                built.description = description;
+				
             built.description = description;
             return this;
         }

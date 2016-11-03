@@ -1,6 +1,16 @@
 var mainServices = angular.module('mainServices',['ngResource', "nourConfig"]);
 
 /*
+Add a Video
+*/
+mainServices.factory('AddVideo',['$resource','config',
+  function($resource,config){
+    return $resource(config.HOST + "video",
+      {},{}
+  );
+  }])
+
+/*
 Get All Videos
 */
 mainServices.factory('GetVideosAll',['$resource','config',
@@ -9,6 +19,17 @@ mainServices.factory('GetVideosAll',['$resource','config',
     {},{}
     );
   }])
+
+  /*
+  Get One Video
+  */
+  mainServices.factory('GetAVideo',['$resource','config',
+    function($resource,config){
+      return $resource(config.HOST + "video/:id",
+      {id:'@_id'},{}
+      );
+    }])
+
 
 
 /*

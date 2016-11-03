@@ -110,6 +110,24 @@ ctrls.filter('formatThumbnailsUrl',function () {
   }
 });
 
+/**
+  除去文件名中的扩展名
+  文件名中除扩展名外不要有点
+*/
+ctrls.filter('formatVideoName',function () {
+  // body...
+  return function (input) {
+    // body...
+    var findDot =  input.indexOf('.');
+    if (findDot > 0) {
+      return input.substring(0,input.indexOf('.'));
+    }
+    else {
+      return input;
+    }
+  }
+});
+
 ctrls.filter('formatGrades',function () {
   // body...
   return function (input) {

@@ -98,6 +98,14 @@ public class MainController {
         return added;
     }
     
+    @RequestMapping(value = "/video/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Video findAVideo(@PathVariable("id") long id) {
+        Video model = videoService.findById(id);
+        LOGGER.debug("Found {} to-do entries.", model);
+        return model;
+    }
+    
     @RequestMapping(value = "/videos", method = RequestMethod.GET)
     @ResponseBody
     public List<Video> findAllVideos() {
