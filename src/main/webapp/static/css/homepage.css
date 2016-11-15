@@ -102,3 +102,8 @@
 .nzvodUpload .form .button{
   width: 8em;
 }
+
+.nzbg{
+  background-image: url(../../images/nap1.jpg)!important;
+  background-color:red;
+}

@@ -234,7 +234,7 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
@@ -287,7 +287,7 @@
             <artifactId>bonecp</artifactId>
             <version>${bonecp.version}</version>
         </dependency>
-        
+
         <!-- Servlet API 3.0 -->
         <dependency>
             <groupId>org.glassfish</groupId>
@@ -359,7 +359,7 @@
             <artifactId>usertype.core</artifactId>
             <version>3.0.0.CR3</version>
         </dependency>
-     
+
         <!-- TESTING DEPENDENCIES -->
         <dependency>
             <groupId>org.hamcrest</groupId>
