@@ -3,7 +3,7 @@
 }
 
 .masthead.segment {
-  min-height: 500px;
+  min-height: 700px;
   padding: 1em 0em;
 }
 .masthead .logo.item img {
@@ -86,6 +86,7 @@
 .grid .segment .grade.label{
   /*width: 4em;*/
   padding-top: 3em;
+  min-width: 4em;
   height: 72px;
   /*font-size: 1.2em;*/
   margin-right: 0px;
@@ -103,7 +104,72 @@
   width: 8em;
 }
 
-.nzbg{
-  background-image: url(../../images/nzp1.jpg)!important;
-  background-color:red;
+header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../../images/nzp1.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .intro-text {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    text-align: left;
+}
+
+header .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
+header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+@media(min-width:992px) {
+
+    .btn-xl {
+    padding: 20px 40px;
+    font-size: 18px;
+    }
+
+    header .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+
+    header .intro-text .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 30px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+    header .intro-text .intro-heading {
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+}
+
+section {
+    padding: 85px 0;
 }
