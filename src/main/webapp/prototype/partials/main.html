@@ -11,37 +11,39 @@
 </div>
 
 
-<!-- Page Contents --> 
+<!-- Page Contents -->
 <div class="pusher">
-  <div class="nzbg ui inverted vertical masthead center aligned segment " >
+  <header>
+    <div class="ui vertical masthead center aligned segment " >
 
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item">主页</a>
+      <!-- <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="active item">主页</a>
+        </div>
+      </div> -->
+
+      <div class="ui text container">
+        <h1 class="ui inverted header">
+         微课点播平台
+        </h1>
+        <h2>有为有不为，知足知不足</h2>
+          <!-- <a class="ui huge primary button">出发 <i class="right arrow icon"></i></a> -->
       </div>
     </div>
-
-    <div class="ui text container">
-      <h1 class="ui inverted header">
-       微课点播平台
-      </h1>
-      <h2>有为有不为，知足知不足</h2>
-        <a class="ui huge primary button">出发 <i class="right arrow icon"></i></a>
-    </div>
-  </div>
+  </header>
 
   <!-- placeHolders -->
-  <div class="ui inverted vertical segment" style="height:200px"></div>
+  <!-- <div class="ui inverted vertical segment" style="height:200px"></div> -->
 
   <div name="contentGrid" class="ui grid" style="margin-top:2em;min-height: 600px;">
     <div class="one wide column">
     </div>
     <div class="two wide column" style="margin-left:-3em;">
         <div class="ui basic segment">
-          <span class="right ui vertical buttons "  style="width:50%;float:left;">
+          <span class="right ui vertical buttons"  style="width:50%;float:left;">
             <div class="ui grade label">一年级</div>
             <div class="ui grade label">二年级</div>
             <div class="ui grade label">三年级</div>
@@ -63,10 +65,10 @@
     <div class="thirteen wide column">
       <div class="ui basic segment" id = "videoSegment">
 
-        <div class="ui cards" >
-          <div class="card" ng-repeat="video in videos">
+        <div class="ui  cards" >
+          <div class="card" ng-repeat="video in videos" style="width:250px;">
             <a class="image" ng-href="{{'#/player/' + video.id}}">
-              <img ng-src="{{video.thumbnailUrl | formatThumbnailsUrl }}" style="width:290px;height:290px;">
+              <img ng-src="{{video.thumbnailUrl | formatThumbnailsUrl }}" style="width:250px;height:250px;">
               <!-- <video src="{{video.url}}" controls poster="{{video.thumbnailUrl | formatThumbnailsUrl }}"></video> -->
             </a>
             <div class="content">
