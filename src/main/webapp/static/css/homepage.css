@@ -170,3 +170,7 @@ header .intro-text .intro-heading {
         line-height: 75px;
     }
 }
+
+section {
+    padding: 85px 0;
+}

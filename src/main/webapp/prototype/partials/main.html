@@ -31,13 +31,17 @@
         </h1>
         <h2>有为有不为，知足知不足</h2>
           <!-- <a class="ui huge primary button">出发 <i class="right arrow icon"></i></a> -->
+          <div class="ui  icon input" style="width:28em;margin:4px">
+            <input type="text" placeholder="搜索" ng-model="main.searchTerm">
+            <i class="search icon page-scroll" href="#skills"></i>
+          </div>
       </div>
     </div>
   </header>
 
   <!-- placeHolders -->
   <!-- <div class="ui inverted vertical segment" style="height:200px"></div> -->
-
+<section id="skills">
   <div name="contentGrid" class="ui grid" style="margin-top:2em;min-height: 600px;">
     <div class="one wide column">
     </div>
@@ -87,6 +91,8 @@
       </div>
     </div>
   </div>
+</section>
+
 
 
   <div class="ui inverted vertical footer segment">
@@ -135,3 +141,5 @@
     <div class="ui cancel button">Cancel</div>
   </div>
 </div>
+
+  <script type="text/javascript" src="../static/js/components/agency.js"></script>
