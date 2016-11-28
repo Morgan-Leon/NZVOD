@@ -1,10 +1,10 @@
 
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
-  <div class="ui container">
+  <div class="ui container" style="padding-left:4em">
       <a class="{{'item ' + subject.color}}" ng-repeat="subject in subjects" ng-class="{'active':subject.id==main.selectedSubjectID}" ng-click="selectSubject(subject)">{{subject.name}}</a>
   </div>
-  <div class="ui mini transparent icon input" style="width:28em;margin:4px">
+  <div class="ui mini  icon input" style="width:28em;margin:4px">
     <input type="text" placeholder="搜索" ng-model="main.searchTerm">
     <i class="search icon"></i>
   </div>
@@ -26,10 +26,10 @@
       </div> -->
 
       <div class="ui text container">
-        <h1 class="ui inverted header">
+        <h1 class="ui inverted header" style="font-family: Microsoft YaHei; color:#096FD9">
          微课点播平台
         </h1>
-        <h2>有为有不为，知足知不足</h2>
+        <h2 style="font-family: Microsoft YaHei; color:#096FD9">有为有不为，知足知不足</h2>
           <!-- <a class="ui huge primary button">出发 <i class="right arrow icon"></i></a> -->
           <div class="ui  icon input" style="width:28em;margin:4px">
             <input type="text" placeholder="搜索" ng-model="main.searchTerm">
