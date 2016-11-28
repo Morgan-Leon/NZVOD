@@ -4,10 +4,11 @@
   <div class="ui container" style="padding-left:4em">
       <a class="{{'item ' + subject.color}}" ng-repeat="subject in subjects" ng-class="{'active':subject.id==main.selectedSubjectID}" ng-click="selectSubject(subject)">{{subject.name}}</a>
   </div>
-  <div class="ui mini  icon input" style="width:28em;margin:4px">
+  <div class="ui mini  icon input" style="width:25em;margin:4px">
     <input type="text" placeholder="搜索" ng-model="main.searchTerm">
     <i class="search icon"></i>
   </div>
+  <a href="#/upload" class="mini ui basic  button" style="width:9em;margin:4px"><i class="upload icon"></i>上传视频</a>
 </div>
 
 
